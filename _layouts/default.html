@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-　　<html>
-　　<head>
-　　　　<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-　　　　<title>{{ page.title }}</title>
-　　</head>
-　　<body>
+<html>
+    {% include head.html %}
+    <body id="page-top" class="index">
+    {% include nav.html %}
+    {% include header.html %}
+    {% include portfolio_grid.html %}
+    {% include about.html %}
 
-　　　　{{ content }}
+    {% if site.contact == "static" %}
+    {% include contact_static.html %}
+    {% else %}
+    {% include contact.html %}
+    {% endif %}
 
-　　</body>
-　　</html>
+    {% include footer.html %}
+    {% include modals.html %}
+    {% include js.html %}
+    </body>
+</html>
